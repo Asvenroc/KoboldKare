@@ -574,7 +574,7 @@ MonoBehaviour:
     cumSplatProjectorMaterial: {fileID: 2100000, guid: 274ee3d452dc0c548a30e3e4f93791a4,
       type: 2}
     attachPosition: {x: 0, y: 0.865, z: 0.03}
-    cumSoundPack: {fileID: 11400000, guid: 6a026e8e8fe32d948a722fccae91b39a, type: 2}
+    cumSoundPack: {fileID: 11400000, guid: 58156e787df372b43870d61f3c12242f, type: 2}
     descriptor: {fileID: 0}
     shouldDisableVagina: 0
   references:
@@ -675,7 +675,6 @@ MonoBehaviour:
   baseBallScale: 0.5
   churnBounce: {fileID: 11400000, guid: 79e603a6ec3d8194796f52ba7ece2ad7, type: 2}
   clenchCurve: {fileID: 11400000, guid: e2caf03697e11734eb5d56ee28756679, type: 2}
-  ballGrumbles: {fileID: 11400000, guid: a680a446c94b40848ae0a5667c51343c, type: 2}
   ballGrumbleSource: {fileID: 2646483582600968895}
 --- !u!1 &6800531978552428810
 GameObject:

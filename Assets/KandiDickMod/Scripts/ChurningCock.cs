@@ -9,32 +9,24 @@ public class ChurningCock : MonoBehaviour
     public float baseBallScale;
     public InflatableCurve churnBounce;
     public InflatableCurve clenchCurve;
-    public AudioPack ballGrumbles;
     public AudioSource ballGrumbleSource;
     private float churnIntensity = 1f;
-    private WaitForSeconds waitTime;
-    private Coroutine routine;
+    private Coroutine churnRoutine;
     private Coroutine clenchRoutine;
 
     void Start(){
         ballGrumbleSource.enabled = false;
-        ballGrumbleSource.loop = false;
-        ballGrumbleSource.playOnAwake = false;
-        if(churnBounce.GetBounceDuration() > 1){
-            waitTime = new WaitForSeconds(0);
-        }else{
-            waitTime = new WaitForSeconds(1f - churnBounce.GetBounceDuration());
-        }
     }
 
     void Update()
     {
         if(dickDescriptor.dicks[0].ballSizeInflater.GetSize() >= 3f && !ballGrumbleSource.enabled){
             ballGrumbleSource.enabled = true;
-            routine = StartCoroutine(PlayGurgles());
+            churnRoutine = StartCoroutine(PulseBalls());
         }else if(dickDescriptor.dicks[0].ballSizeInflater.GetSize() < 3f && ballGrumbleSource.enabled){
             ballGrumbleSource.enabled = false;
-            StopCoroutine(routine);
+            StopCoroutine(churnRoutine);
+            churnRoutine = null;
         }
 
         if(dickDescriptor.isCumming() && clenchRoutine == null){
@@ -44,7 +36,7 @@ public class ChurningCock : MonoBehaviour
             clenchRoutine = null;
         }
 
-        churnIntensity = 1f + Mathf.Clamp((dickDescriptor.dicks[0].ballSizeInflater.GetSize() - 2f), 0, 3);
+        churnIntensity = 1f + Mathf.Clamp(dickDescriptor.dicks[0].ballSizeInflater.GetSize() - 2f, 0, 3);
     }
 
     public IEnumerator ClenchBalls(){
@@ -62,24 +54,10 @@ public class ChurningCock : MonoBehaviour
         clenchRoutine = null;
     }
 
-    private IEnumerator PlayGurgles() {
-        while (ballGrumbleSource.enabled) {
-            if (!ballGrumbleSource.isPlaying) {
-                yield return StartCoroutine(PulseBalls());
-                yield return waitTime;
-                ballGrumbles.Play(ballGrumbleSource);
-                ballGrumbleSource.volume = 1;
-            }
-            yield return null;
-        }
-
-        routine = null;
-    }
-
     public IEnumerator PulseBalls(){
-        if(!dickDescriptor.isCumming()){
-            while(ballGrumbleSource.isPlaying){
-                yield return new WaitForSeconds(0.5f);
+        while(ballGrumbleSource.enabled){
+            if(!dickDescriptor.isCumming()){
+                yield return new WaitForSeconds(Random.Range(2f, 5f));
                 float startTime = Time.time;
                 float endTime = startTime+churnBounce.GetBounceDuration();
                 while (Time.time < endTime) {
@@ -89,8 +67,7 @@ public class ChurningCock : MonoBehaviour
                     yield return null;
                 }
             }
-        }else{
-            yield return new WaitForSeconds(churnBounce.GetBounceDuration());
+            yield return null;
         }
     }
 }
