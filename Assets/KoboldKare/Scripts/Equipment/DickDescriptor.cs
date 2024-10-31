@@ -116,10 +116,10 @@ public class DickDescriptor : MonoBehaviour {
         }
     }
 
-    public void isCumming(){
+    public bool isCumming(){
         return cumming;
     }
-    
+
     public void RemoveFrom(Kobold k) {
         // Must've been removed already
         foreach (DickSet set in dicks) {
