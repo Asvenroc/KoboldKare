@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: KandiDickModified
+  m_EditorClassIdentifier: 
+  m_GroupName: KandiDickModified
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d7df503c189a2e047956f88f94b8acad
+  m_SerializeEntries:
+  - m_GUID: 7f5939550ed82eb4c9bcad3025f97002
+    m_Address: Texture/KandiDickClean
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eef1b39a01505f64682c7c5b17860141
+    m_Address: Material/KandiDickClean
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1c9230da1aed7445b904ccc6fc1da9d
+    m_Address: Penis/KandiDickClean
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Penis
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 031e8f93cc56db7418277c59a54df1bb
+    m_Address: Model/KandiDickClean
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02fc2170cc59335498a8882783271144
+    m_Address: BonerBounce
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 071177a329c017540a3fbf94e25e28f6
+    m_Address: Tattoo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b55fbc081e6a6a4081c436852faced0
+    m_Address: BioHazardSymbol
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1219ad85f352cb64c8508ef1ec7f558e
+    m_Address: Assets/KandiDickMod/Sounds/GurgleSounds.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7f763291e384cc46a6853bef04bbae5
+    m_Address: AudioMixer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 156e0bde5564a624e981b4b7e75d2c2f
+    m_Address: Assets/KandiDickMod/Bounces/SlowerBounce.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3125df83955ba694e9592a3d85c0fb1f
+    m_Address: Penis/KandiDickHazard
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Penis
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: bae434cba05d81d4b9cb5c181a2fbf2c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f5d1148a530d9514390130d05c598b36, type: 2}
+    - {fileID: 11400000, guid: 76226994619a4b749bfc4ab1685afd6b, type: 2}
