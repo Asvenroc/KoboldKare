@@ -671,11 +671,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dickDescriptor: {fileID: 6275529681361620731}
-  tattooObject: {fileID: 0}
-  ballScaler: {fileID: 0}
-  bounce: {fileID: 0}
-  ballGrumbles: {fileID: 0}
-  ballGrumbleSource: {fileID: 0}
+  ballScaler: {fileID: 5437793172414866907}
+  baseBallScale: 0.5
+  churnBounce: {fileID: 11400000, guid: 79e603a6ec3d8194796f52ba7ece2ad7, type: 2}
+  clenchCurve: {fileID: 11400000, guid: e2caf03697e11734eb5d56ee28756679, type: 2}
+  ballGrumbles: {fileID: 11400000, guid: a680a446c94b40848ae0a5667c51343c, type: 2}
+  ballGrumbleSource: {fileID: 2646483582600968895}
 --- !u!1 &6800531978552428810
 GameObject:
   m_ObjectHideFlags: 0

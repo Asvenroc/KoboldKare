@@ -203,7 +203,8 @@ public class DickDescriptor : MonoBehaviour {
                 if (MozzarellaPool.instance.TryInstantiate(out Mozzarella mozzarella)) {
                     ReagentContents alloc = new ReagentContents();
                     alloc.AddMix(ReagentDatabase.GetReagent("Cum").GetReagent(attachedKobold.GetGenes().ballSize/pulses));
-                    mozzarella.SetVolumeMultiplier(alloc.volume*2f);
+                    mozzarella.SetVolumeMultiplier(Mathf.Clamp(alloc.volume*2f, 0, 30));
+                    mozzarella.SetVelocityMultiplier(Mathf.Clamp((alloc.volume*10f), 2, 10));
                     Color color = alloc.GetColor();
                     mozzarella.SetLineColor(color);
                     mozzarella.hitCallback += (hit, startPos, dir, length, volume) => {

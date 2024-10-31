@@ -83,6 +83,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - Penis
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a680a446c94b40848ae0a5667c51343c
+    m_Address: Assets/KandiDickMod/Sounds/BallGrumbles.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79e603a6ec3d8194796f52ba7ece2ad7
+    m_Address: Assets/KandiDickMod/Bounces/ChurnBounce.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2caf03697e11734eb5d56ee28756679
+    m_Address: Assets/KandiDickMod/Bounces/ClenchCurve.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: bae434cba05d81d4b9cb5c181a2fbf2c, type: 2}
   m_SchemaSet:

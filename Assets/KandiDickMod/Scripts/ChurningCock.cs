@@ -8,11 +8,13 @@ public class ChurningCock : MonoBehaviour
     public Transform ballScaler;
     public float baseBallScale;
     public InflatableCurve churnBounce;
+    public InflatableCurve clenchCurve;
     public AudioPack ballGrumbles;
     public AudioSource ballGrumbleSource;
     private float churnIntensity = 1f;
     private WaitForSeconds waitTime;
     private Coroutine routine;
+    private Coroutine clenchRoutine;
 
     void Start(){
         ballGrumbleSource.enabled = false;
@@ -35,7 +37,29 @@ public class ChurningCock : MonoBehaviour
             StopCoroutine(routine);
         }
 
+        if(dickDescriptor.isCumming() && clenchRoutine == null){
+            clenchRoutine = StartCoroutine(ClenchBalls());
+        }else if(!dickDescriptor.isCumming() && clenchRoutine != null){
+            StopCoroutine(clenchRoutine);
+            clenchRoutine = null;
+        }
+
         churnIntensity = 1f + Mathf.Clamp((dickDescriptor.dicks[0].ballSizeInflater.GetSize() - 2f), 0, 3);
+    }
+
+    public IEnumerator ClenchBalls(){
+        while (dickDescriptor.isCumming()){
+            float startTime = Time.time;
+            float endTime = startTime+clenchCurve.GetBounceDuration();
+            while (Time.time < endTime) {
+                float t = (Time.time - startTime) / clenchCurve.GetBounceDuration();
+                float multiplier = clenchCurve.EvaluateCurve(t);
+                ballScaler.localScale = new Vector3(multiplier, multiplier, multiplier) * baseBallScale;
+                yield return null;
+            }
+        }
+
+        clenchRoutine = null;
     }
 
     private IEnumerator PlayGurgles() {
@@ -53,13 +77,20 @@ public class ChurningCock : MonoBehaviour
     }
 
     public IEnumerator PulseBalls(){
-        float startTime = Time.time;
-        float endTime = startTime+churnBounce.GetBounceDuration();
-        while (Time.time < endTime) {
-            float t = (Time.time - startTime) / churnBounce.GetBounceDuration();
-            float multiplier = Mathf.Pow(churnBounce.EvaluateCurve(t), churnIntensity);
-            ballScaler.localScale = new Vector3(multiplier, multiplier, multiplier) * baseBallScale;
-            yield return null;
+        if(!dickDescriptor.isCumming()){
+            while(ballGrumbleSource.isPlaying){
+                yield return new WaitForSeconds(0.5f);
+                float startTime = Time.time;
+                float endTime = startTime+churnBounce.GetBounceDuration();
+                while (Time.time < endTime) {
+                    float t = (Time.time - startTime) / churnBounce.GetBounceDuration();
+                    float multiplier = Mathf.Pow(churnBounce.EvaluateCurve(t), churnIntensity);
+                    ballScaler.localScale = new Vector3(multiplier, multiplier, multiplier) * baseBallScale;
+                    yield return null;
+                }
+            }
+        }else{
+            yield return new WaitForSeconds(churnBounce.GetBounceDuration());
         }
     }
 }

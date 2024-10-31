@@ -37,10 +37,12 @@ public class PenetratorPassiveAudioPack : PenetratorListener {
         if (!Application.isPlaying) {
             return;
         }
-        source.volume = Mathf.MoveTowards(source.volume, 0f, Time.deltaTime*pack.GetVolume());
-        source.pitch = Mathf.Lerp(0.5f, 1f, source.volume / Mathf.Max(pack.GetVolume(),0.01f));
-        if (source.volume == 0f && lastDepth == 0f) {
-            source.enabled = false;
+        if(source != null){
+            source.volume = Mathf.MoveTowards(source.volume, 0f, Time.deltaTime*pack.GetVolume());
+            source.pitch = Mathf.Lerp(0.5f, 1f, source.volume / Mathf.Max(pack.GetVolume(),0.01f));
+            if (source.volume == 0f && lastDepth == 0f) {
+                source.enabled = false;
+            }
         }
     }
 

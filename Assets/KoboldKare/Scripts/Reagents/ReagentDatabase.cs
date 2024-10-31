@@ -49,6 +49,9 @@ public class ReagentDatabase : MonoBehaviour {
             return instance.defaultReagent;
         }
         
+        if(id >= instance.reagents.Count){
+            return GetReagent("Water");
+        }
         return instance.reagents[id];
     }
     public static byte GetID(ScriptableReagent reagent) {

@@ -74,6 +74,10 @@ namespace Naelstrof.Mozzarella {
         public void SetVolumeMultiplier(float multi) {
             volumeMultiplier = multi;
         }
+
+        public void SetVelocityMultiplier(float multi) {
+            velocityMultiplier = multi;
+        }
         
         public void SetLineColor(Color color){
             lineMaterial.color = color;

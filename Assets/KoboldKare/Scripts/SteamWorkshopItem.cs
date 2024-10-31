@@ -311,8 +311,8 @@ public class SteamWorkshopItem {
 			Save();
 
 			BuildForPlatform(BuildTarget.StandaloneWindows64);
-			BuildForPlatform(BuildTarget.StandaloneLinux64);
-			BuildForPlatform(BuildTarget.StandaloneOSX);
+			//BuildForPlatform(BuildTarget.StandaloneLinux64);
+			//BuildForPlatform(BuildTarget.StandaloneOSX);
 			lastMessage = "Successfully built! Upload when ready.";
 			lastMessageType = MessageType.Info;
 		} catch {

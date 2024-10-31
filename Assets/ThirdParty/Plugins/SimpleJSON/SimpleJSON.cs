@@ -447,6 +447,9 @@ namespace SimpleJSON
         }
         internal static string Escape(string aText)
         {
+            if(aText == null)
+                return "";
+                
             var sb = EscapeBuilder;
             sb.Length = 0;
             if (sb.Capacity < aText.Length + aText.Length / 10)
