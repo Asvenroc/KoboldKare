@@ -115,6 +115,11 @@ public class DickDescriptor : MonoBehaviour {
             set.ballSizeInflater.OnEnable();
         }
     }
+
+    public void isCumming(){
+        return cumming;
+    }
+    
     public void RemoveFrom(Kobold k) {
         // Must've been removed already
         foreach (DickSet set in dicks) {
